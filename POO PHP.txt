@@ -1,0 +1,113 @@
+1.- <?php
+
+class Animal {
+	protected $nombre;
+	protected $especie;
+	protected $patas;
+	protected $alimentacion;
+	
+	public function __construct($nombre,$especie,$patas,$alimentacion){
+		$this->nombre = $nombre;
+		$this->especie = $especie;
+		$this->patas = $patas;
+		$this->alimentacion = $alimentacion;
+	}
+	
+	public function getNombre() {
+		return $this->nombre;
+	}
+	public function getEspecie() {
+		return $this->especie;
+	}
+	public function getPatas() {
+		return $this->patas;
+	}
+	public function getAlimentacion() {
+		return $this->Alimentacion;
+	}
+	public function descripcion(){
+		echo "La " . $this->nombre . " es un " . $this->especie . " de " . $this->patas . " y " . $this->alimentacion . ".\n";
+	}
+}	
+
+$pantera=new Animal("Pantera","felino","4 patas","carnívoro");
+$pantera->descripcion();
+
+$orca=new Animal("orca","cetáceo", "0 patas","carnívoro");
+$orca->descripcion();
+
+?>
+
+2.-<?php
+
+class Calculadora {
+	private $x;
+	private $y;
+	
+	public function __construct($x, $y){
+		$this->x=$x;
+		$this->y=$y;
+	}
+	
+	public function sumar(){
+		return $this->x + $this->y;
+	}
+	
+	public function Restar(){
+		return $this->x - $this->y;
+	}
+	public function multiplicar(){
+		return $this->x * $this->y;
+	}
+	
+	public function dividir(){
+		if($this->y !=0){
+			return $this->x / $this->y;
+		}else{
+			return "Fallo: No se puede dividir por cero. ";
+		}
+	}
+}
+
+$calculadora= new Calculadora(14,23);
+
+echo "Suma: " . $calculadora->sumar() . "\n";
+echo "Resta: " . $calculadora->restar() . "\n";
+echo "Multiplicación: " . $calculadora->multiplicar() . "\n";
+echo "División: " . $calculadora->dividir() . "\n";
+
+?>
+
+3.-<?php
+
+class Persona {
+	public $nombre;
+	public $apellidos;
+	public $nacimiento;
+	public $dni;
+	public $direccion;
+	public $localidad;
+	public $telefono;
+	
+	public function __construct($nombre, $apellidos,$nacimiento,$dni,$direccion,$localidad,$telefono){
+		$this->nombre=$nombre;
+		$this->apellidos=$apellidos;
+		$this->nacimiento=$nacimiento;
+		$this->dni=$dni;
+		$this->direccion=$direccion;
+		$this->localidad=$localidad;
+		$this->telefono=$telefono;
+	}	
+	public function nombreCompleto() {
+        return "{$this->nombre} {$this->apellidos}";
+	}
+	
+	public function presentarse(){
+		return "{$this->nombre} {$this->apellidos}";
+		echo "Buenas! Soy "
+	}
+}
+$person1=new Persona("Martina","Perez");
+echo $person1->nombreCompleto();
+?>
+//https://styde.net/aprende-programacion-orientada-a-objetos-poo-con-php/
